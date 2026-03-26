@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ../github-collage-generator-backend
+    ports:
+      - "8888:8080"
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  frontend:
+    build:
+      context: ../github-collage-generator-frontend
+    ports:
+      - "8081:80"
+    environment:
+      - BACKEND_URL=http://backend:8080
+    depends_on:
+      backend:
+        condition: service_healthy
