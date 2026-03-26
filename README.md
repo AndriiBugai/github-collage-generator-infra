@@ -1,6 +1,6 @@
 # GitHub Followers Collage Generator — Infra
 
-Runs the [frontend](../github-collage-generator-frontend) and [backend](../github-collage-generator-backend) via Docker Compose or Kubernetes (minikube).
+Runs the [frontend](https://github.com/AndriiBugai/github-collage-generator-frontend) and [backend](https://github.com/AndriiBugai/github-collage-generator-backend) via Docker Compose or Kubernetes (minikube).
 
 ## Docker Compose
 
